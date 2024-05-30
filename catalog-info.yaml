@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: lj701-3-x-java-springboot-gitops
+  description: This is GitOps manifest for lj701-3-x-java-springboot   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: lj701-3-x-java-springboot
+    janus-idp.io/tekton: lj701-3-x-java-springboot 
+    backstage.io/kubernetes-id: lj701-3-x-java-springboot 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:lj701-3-x-java-springboot
